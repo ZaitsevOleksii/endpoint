@@ -1,9 +1,9 @@
 var http = require("http");
-var url = require("url");
+
 
 function start(route, handle){http.createServer((request, response) => {
 	
-	var pathname = url.parse(request.url).pathname;
+	var pathname = request.url;
 	console.log("Request for " + pathname +" received.");
 	route(handle, pathname, response, request);
     
